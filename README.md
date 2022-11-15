@@ -1,6 +1,6 @@
-<h1>Contains codes on topic 👇</h1>
+<h1>Contains codes and leetcode solutions on topics 👇</h1>
 <ul>
-<li>Arrya</li>
+<li>Arrays</li>
 <li>Binary Search</li>
 <li>Bubble Sort</li>
 <li>Selection Sort</li>
