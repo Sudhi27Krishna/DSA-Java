@@ -1,4 +1,4 @@
-<h1>Contains codes and leetcode solutions on topics 👇</h1>
+<h1>Contains Java codes and leetcode solutions on topics 👇</h1>
 <ul>
 <li>Arrays</li>
 <li>Binary Search</li>
