@@ -8,6 +8,7 @@ public class QuickUnionUF {
     }
 
     private int root(int i){
+        id = new int[N];
         while (i != id[i]){
             i = id[i];
         }
