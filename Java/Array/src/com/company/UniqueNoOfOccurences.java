@@ -19,7 +19,7 @@ public class UniqueNoOfOccurences {
                 map.put(arr[i],++temp);
             }
             else{
-                map.put(arr[i],0);
+                map.put(arr[i],1);
             }
         }
         ArrayList<Integer> list = new ArrayList<Integer>();
