@@ -13,4 +13,5 @@
 <li>Stack and Queue</li>
 <li>Trees</li>
 <li>Graphs</li>
+<li>Dynamic Programming</li>
 </ul>
