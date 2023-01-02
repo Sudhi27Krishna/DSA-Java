@@ -5,11 +5,11 @@ class JumpGameII {
         int n = nums.length;
         int[] dp = new int[n];
         Arrays.fill(dp, -1);
-        return fun(0, n, nums, dp) - 1;
+        return fun(0, n, nums, dp);
     }
 
     public int fun(int ind, int n, int[] nums, int[] dp){
-        if(ind >= n-1) return 1;
+        if(ind >= n-1) return 0;
         if(nums[ind] == 0) return (int)1e9;
 
         if(dp[ind] != -1) return dp[ind];
