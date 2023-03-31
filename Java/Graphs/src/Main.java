@@ -83,36 +83,4 @@ public class Main {
 
         return false;
     }
-    // Bipartitie BFS check
-    public static boolean checkBipartite(ArrayList<ArrayList<Integer>> adj, int V){
-        int[] color = new int[V];
-        Arrays.fill(color, -1);
-
-        for (int i = 0; i < V; i++) {
-            if(color[i] == -1){
-                if(bfsCheck(adj, i, color)){
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
-    public static boolean bfsCheck(ArrayList<ArrayList<Integer>> adj, int node, int[] color) {
-        Queue<Integer> q = new LinkedList<>();
-        q.add(node);
-
-        while(!q.isEmpty()){
-            Integer temp = q.poll();
-
-            for(Integer it : adj.get(temp)){
-                if(color[it] == -1){
-                    color[it] = 1 - color[temp];
-                    q.add(it);
-                }
-                else if (color[it] == color[temp]) return false;
-            }
-        }
-        return true;
-    }
 }
