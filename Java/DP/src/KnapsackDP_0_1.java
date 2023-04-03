@@ -2,7 +2,7 @@
 
 import java.util.Arrays;
 
-public class KnapsackDP {
+public class KnapsackDP_0_1 {
     public static void main(String[] args) {
         int wt[] = {1,2,4,5};
         int val[] = {5,4,8,6};
