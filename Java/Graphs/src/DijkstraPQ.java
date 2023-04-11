@@ -47,7 +47,7 @@ public class DijkstraPQ {
                 // push it into the queue.
                 if(dis + edgeWeight < dist[adjNode]) {
                     dist[adjNode] = dis + edgeWeight;
-                    pq.add(new LInk(dist[adjNode], adjNode));
+                    pq.add(new Link(dist[adjNode], adjNode));
                 }
             }
         }
