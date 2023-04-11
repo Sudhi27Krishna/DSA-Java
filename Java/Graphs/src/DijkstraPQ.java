@@ -3,10 +3,10 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
-class LInk {
+class Link {
     int node;
     int distance;
-    public LInk(int distance, int node){
+    public Link(int distance, int node){
         this.node = node;
         this.distance = distance;
     }
@@ -17,7 +17,7 @@ public class DijkstraPQ {
         // Create a priority queue for storing the nodes as a pair {dist, node
         // where dist is the distance from source to the node.
 //        PriorityQueue<LInk> pq = new PriorityQueue<LInk>((x, y) -> x.distance - y.distance);
-        PriorityQueue<LInk> pq = new PriorityQueue<>(Comparator.comparingInt(x -> x.distance));
+        PriorityQueue<Link> pq = new PriorityQueue<>(Comparator.comparingInt(x -> x.distance));
 
         int[] dist = new int[V];
 
@@ -28,7 +28,7 @@ public class DijkstraPQ {
 
         // Source initialised with dist=0.
         dist[S] = 0;
-        pq.add(new LInk(0,S));
+        pq.add(new Link(0,S));
 
         // Now, pop the minimum distance node first from the min-heap
         // and traverse for all its adjacent nodes.
