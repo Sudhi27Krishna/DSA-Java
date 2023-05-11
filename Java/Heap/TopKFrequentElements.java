@@ -16,7 +16,7 @@ class TopKFrequentElements {
         int ind = 0;
         Map<Integer, Integer> map = new HashMap<>();
         PriorityQueue<Pair> pq = new PriorityQueue<>(
-            (x, y) -> (x.freq == y.freq) ? x.elm - y.elm :  x.freq - y.freq
+            (x, y) -> (x.freq == y.freq) ? x.elm - y.elm : x.freq - y.freq
         );
 
         for(int i=0; i<nums.length; i++){
