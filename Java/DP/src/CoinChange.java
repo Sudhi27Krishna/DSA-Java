@@ -19,7 +19,7 @@ public class CoinChange {
 
 
         int notTake = fun(ind-1, amt, coins);
-        int take = Integer.MAX_VALUE;
+        int take = (int)1e9;
         if(coins[ind] <= amt){
             take = 1 + fun(ind, amt-coins[ind], coins);
         }
