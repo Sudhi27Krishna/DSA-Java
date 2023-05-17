@@ -44,3 +44,39 @@ public class Subset {
         return outer;
     }
 }
+
+class Subset_I {
+    public List<List<Integer>> subsets(int[] nums) {
+        List<List<Integer>> ans = new ArrayList<>();
+        fun(0, nums, ans, new ArrayList<>());
+        return ans;
+    }
+
+    public void fun(int ind, int[] nums, List<List<Integer>> list, List<Integer> p){
+        list.add(new ArrayList<>(p));
+        for(int i=ind; i<nums.length; i++){
+            p.add(nums[i]);
+            fun(i+1, nums, list, p);
+            p.remove(p.size()-1);
+        }
+    }
+}
+
+class Subset_II {
+    public List<List<Integer>> subsetsWithDup(int[] nums) {
+        List<List<Integer>> ans = new ArrayList<>();
+        Arrays.sort(nums);
+        fun(0, nums, ans, new ArrayList<>());
+        return ans;
+    }
+
+    public void fun(int ind, int[] nums, List<List<Integer>> list, List<Integer> p){
+        list.add(new ArrayList<>(p));
+        for(int i=ind; i<nums.length; i++){
+            if(i != ind && nums[i] == nums[i-1]) continue;
+            p.add(nums[i]);
+            fun(i+1, nums, list, p);
+            p.remove(p.size()-1);
+        }
+    }
+}
