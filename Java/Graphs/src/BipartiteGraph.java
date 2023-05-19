@@ -13,6 +13,7 @@ public class BipartiteGraph {
 
         for (int i = 0; i < V; i++) {
             if(color[i] == -1){
+                color[i] = 0;
                 if(!bfsCheck(adj, i, color)){
                     return false;
                 }
