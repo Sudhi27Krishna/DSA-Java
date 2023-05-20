@@ -355,19 +355,19 @@ public void ThreeInOne(TreeNode root){
             int x = tuple.row;
             int y = tuple.col;
 
-            if(!map.containsKey(x)){
-                map.put(x, new TreeMap<>());
+            if(!map.containsKey(y)){
+                map.put(y, new TreeMap<>());
             }
-            if(!map.get(x).containsKey(y)){
-                map.get(x).put(y, new PriorityQueue<>());
+            if(!map.get(y).containsKey(x)){
+                map.get(y).put(x, new PriorityQueue<>());
             }
-            map.get(x).get(y).offer(node.val);
+            map.get(y).get(x).offer(node.val);
 
             if(node.left != null){
-                q.offer(new Tuple(node.left,y+1,x-1));
+                q.offer(new Tuple(node.left,x+1,y-1));
             }
             if(node.right != null){
-                q.offer(new Tuple(node.right,y+1,x+1));
+                q.offer(new Tuple(node.right,x+1,y+1));
             }
         }
         List<List<Integer>> list = new ArrayList<>();
@@ -763,13 +763,13 @@ class Pair{
 }
 class Tuple{
     TreeNode node;
-    int col;
     int row;
+    int col;
 
-    public Tuple(TreeNode node, int col, int row) {
+    public Tuple(TreeNode node, int row, int col) {
         this.node = node;
-        this.col = col;
         this.row = row;
+        this.col = col;
     }
 }
 //    Queue<Node> queue = new LinkedList<Node>();
