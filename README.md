@@ -14,4 +14,6 @@
 <li>Trees</li>
 <li>Graphs</li>
 <li>Dynamic Programming</li>
+<li>Sliding Window</li>
+<li>Heap</li>
 </ul>
