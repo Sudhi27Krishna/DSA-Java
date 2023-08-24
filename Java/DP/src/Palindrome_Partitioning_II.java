@@ -69,7 +69,7 @@ class Palindrome_Partitioning_II
         if (dp[start][end] != null)
             return dp[start][end];
         
-        int minCut = s.length() - 1;
+        int minCut = Integer.MAX_VALUE;
         for (int i = start; i <= end; i++) {
             if (isPalindrome(s, start, i)) {
                 minCut = Math.min(minCut, 1 + minCutFrom(s, i + 1, end));
