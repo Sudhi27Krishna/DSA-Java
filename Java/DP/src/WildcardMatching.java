@@ -29,4 +29,34 @@ class WildcardMatching {
 
         return dp[i][j] = false;
     }
+
+    // Tabulation
+    public boolean isMatchTabulation(String s, String p) {
+        int n = s.length(), m = p.length();
+        Boolean[][] dp = new Boolean[n+1][m+1];
+        dp[n][m] = true;
+        for(int i=0; i<n; i++) dp[i][m] = false;
+
+        for(int i=0; i<m; i++){
+            char ch = '*';
+            for(int k=i; k<p.length(); k++) if(ch != p.charAt(k)){
+                dp[n][i] = false;
+                break;
+            }
+            if(dp[n][i] == null) dp[n][i] = true;
+        }
+        
+        for(int i=n-1; i>=0; i--){
+            for(int j=m-1; j>=0; j--){
+                if(p.charAt(j) == '?' || s.charAt(i) == p.charAt(j)){
+                    dp[i][j] = dp[i+1][j+1];
+                }
+                else if(p.charAt(j) == '*'){
+                    dp[i][j] = dp[i+1][j] || dp[i][j+1];
+                }
+                else dp[i][j] = false;
+            }
+        }
+        return dp[0][0];
+    }
 }
