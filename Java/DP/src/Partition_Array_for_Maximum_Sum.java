@@ -34,7 +34,7 @@ class Partition_Array_for_Maximum_Sum {
             for(int j=i; j<Math.min(arr.length, i+k); j++){
                 len++;
                 max = Math.max(max, arr[j]);
-                int sum = max*len + fun(j+1, arr, k, dp);
+                int sum = max*len + dp[j+1];
                 res = Math.max(res, sum);
             }
             dp[i] = res;
