@@ -26,7 +26,7 @@ public class TargetSum {
         if(ind == 0){
             if(target == 0 && nums[0] == 0) return 2;
             else if (target == 0 || nums[0] == target) return 1;
-            else return 1;
+            else return 0;
         }
 
         if(dp[ind][target]!=-1)
