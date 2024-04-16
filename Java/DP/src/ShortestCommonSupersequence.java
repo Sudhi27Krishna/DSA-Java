@@ -5,7 +5,7 @@ class ShortestCommonSupersequence {
         int n = s1.length();
         int m = s2.length();
 
-        int[][] dp =new int[n+1][m+1];
+        int[][] dp = new int[n+1][m+1];
         for (int i = 0; i <= n; i++) {
             dp[i][0] = 0;
         }
@@ -25,16 +25,13 @@ class ShortestCommonSupersequence {
         int len = dp[n][m];
         int i = n;
         int j = m;
-
-        int index = len - 1;
         String ans = "";
 
         while (i > 0 && j > 0) {
             if (s1.charAt(i - 1) == s2.charAt(j - 1)) {
-            ans += s1.charAt(i-1);
-            index--;
-            i--;
-            j--;
+                ans += s1.charAt(i-1);
+                i--;
+                j--;
             } else if (dp[i - 1][j] > dp[i][j - 1]) {
                 ans += s1.charAt(i-1);
                 i--;
@@ -43,8 +40,6 @@ class ShortestCommonSupersequence {
                 j--;
             }
         }
-        
-        //Adding Remaing Characters - Only one of the below two while loops will run 
         
         while(i>0){
             ans += s1.charAt(i-1);
@@ -55,7 +50,7 @@ class ShortestCommonSupersequence {
             j--;
         }
 
-        String ans2=new StringBuilder(ans).reverse().toString();
+        String ans2 = new StringBuilder(ans).reverse().toString();
         
         return ans2;
     }
